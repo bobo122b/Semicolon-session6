@@ -36,3 +36,14 @@
     background: whitesmoke;
     color: #014001;
 }
+
+.deactivated {
+    background: grey;
+    cursor: not-allowed;
+}
+
+.deactivated:hover {
+    background: grey;
+    cursor: not-allowed;    
+    color: whitesmoke;
+}
