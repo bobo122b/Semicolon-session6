@@ -53,10 +53,45 @@ console.log(Atwa.favoriteColor);
 console.log(Atwa);
 */
 
-/*
+// Part 4: classList
+
 let btns = document.getElementsByClassName("btn");
 
-for (let i = 0; i < btns.length; i++) {
-    btns[i].classList.add("deactivated");
+for (let i of btns) {
+    // Adding a click event listener for all buttons
+    i.addEventListener("click", ()=> {
+        // will only work if the clicked button says "Deactivate Me" or "Activate"
+        if (i.textContent == "Deactivate Me") {
+            // deactivate the clicked button
+            i.classList.add("deactivated");
+            i.textContent = "Deactivated";
+            // loop through all other buttons to add the word "Activate" to all of them
+            for (let j of btns) {
+                if(j.textContent != "Deactivated") {
+                    j.textContent = "Activate";
+                } 
+            }
+        } else if (i.textContent == "Activate") {
+            // if a button with the word "Activate" is clicked
+            for (let j of btns) {
+                if(j.textContent == "Deactivated") {
+                    // we remove the deactivated class
+                    j.classList.remove("deactivated");
+                }
+                // and change the text of all buttons back to "Deactivate Me"
+                j.textContent = "Deactivate Me";
+            }
+        }
+    })
 }
+
+// Part 5: Higher order functions (callbacks)
+
+/*
+function myCb(x) {
+    x = x * 2;
+    console.log(x);
+}
+
+setTimeout(() => myCb(2), 1000);
 */
