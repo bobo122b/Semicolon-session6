@@ -1,0 +1,11 @@
+.container {
+    display: block;
+    width: 80vw;
+    height: 40vh;
+    background: #e0960d;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15vh;
+    border-radius: 15px;
+    border: 4px solid black;
+}
